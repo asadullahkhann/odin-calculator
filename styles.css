@@ -10,3 +10,20 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.container {
+    border: 2px solid;
+    width: 300px;
+    height: 400px;
+}
+
+.screen {
+    height: 66px;
+    color: white;
+    font-size: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
