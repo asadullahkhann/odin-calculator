@@ -33,8 +33,8 @@ body {
 
 .btn-container button {
     width: 75px;
-    border: none;
     height: 66px;
+    border: none;
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -49,5 +49,18 @@ body {
 }
 
 .equals {
-    background-color: orange;
+    background-color: orange
+}
+
+.equals:active {
+    background-color: darkorange;
+}
+
+button:hover {
+    border: 0.5px solid black;
+    font-size: 28px;
+}
+
+button:active {
+    background-color: lightgray;
 }
