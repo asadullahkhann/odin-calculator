@@ -12,7 +12,6 @@ body {
 }
 
 .container {
-    border: 2px solid;
     width: 300px;
     height: 400px;
 }
@@ -26,4 +25,28 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+}
+
+.btn-container {
+    display: flex;
+}
+
+.btn-container button {
+    flex-grow: 1;
+    border: none;
+    height: 66px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear {
+    color:  #d9534f;
+}
+
+.operator {
+    color: orange;
+}
+
+.equals {
+    background-color: orange;
 }
