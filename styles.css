@@ -32,7 +32,7 @@ body {
 }
 
 .btn-container button {
-    flex-grow: 1;
+    width: 75px;
     border: none;
     height: 66px;
     font-size: 24px;
@@ -41,6 +41,7 @@ body {
 
 .clear {
     color:  #d9534f;
+    flex-grow: 0;
 }
 
 .operator {
