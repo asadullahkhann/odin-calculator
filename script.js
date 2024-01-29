@@ -20,17 +20,6 @@ let num2 = '';
 
 let displayValue;
 
-numberBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        let number = e.target.textContent;
-        op === null ? num1 += number : 
-        num2 += number;
-        num2 ? displayValue = num2 :
-        displayValue = num1;
-        display(displayValue); 
-    })
-})
-
 const calculator = {
     '+': (x, y) => x + y,
     '-': (x, y) => x - y,
@@ -48,3 +37,27 @@ const calculator = {
 function display(value) {
     screen.textContent = value;
 }
+
+numberBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        let number = e.target.textContent;
+        op === null ? num1 += number : 
+        num2 += number;
+        num2 ? displayValue = num2 :
+        displayValue = num1;
+        display(displayValue); 
+    })
+})
+
+operatorBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        if(num1 && op && num2) {
+            displayValue = calculator.operate(num1, op, num2);
+            num1 = displayValue;
+            op = e.target.textContent;
+            num2 = '';
+            display(displayValue);
+        }
+        else op = e.target.textContent;
+    })
+})
