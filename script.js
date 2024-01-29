@@ -8,7 +8,9 @@ const operatorBtns = document.querySelectorAll('.operator');
 
 const numberBtns = document.querySelectorAll('.number');
 
-const decimalBtn = document.querySelector('.point');
+const pointBtn = document.querySelector('.point');
+
+const equalsBtn = document.querySelector('.equals');
 
 let num1 = '';
 
@@ -29,28 +31,18 @@ numberBtns.forEach(btn => {
     })
 })
 
-function add(x,y) {
-    return x + y;
-}
-
-function subtract(x,y) {
-    return x - y;
-}
-
-function multiply(x,y) {
-    return x * y;
-}
-
-function divide(x,y) {
-    return x / y;
-}
-
-function pow(x,y) {
-    return x ** y;
-}
-
-function getRemainder(x,y) {
-    return x % y;
+const calculator = {
+    '+': (x, y) => x + y,
+    '-': (x, y) => x - y,
+    '*': (x, y) => x * y,
+    '/': (x, y) => x / y,
+    '**': (x, y) => x ** y,
+    '%': (x, y) => x % y,
+    'operate': (x, op, y) => {
+        x = parseFloat(x);
+        y = parseFloat(y);
+        return calculator[op](x, y);
+    }
 }
 
 function display(value) {
