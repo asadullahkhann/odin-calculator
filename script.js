@@ -21,3 +21,11 @@ function multiply(x,y) {
 function divide(x,y) {
     return x / y;
 }
+
+function pow(x,y) {
+    return x ** y;
+}
+
+function getRemainder(x,y) {
+    return x % y;
+}
