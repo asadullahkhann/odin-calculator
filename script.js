@@ -77,3 +77,16 @@ allClearBtn.addEventListener('click', () => {
     num2 = '';
     display('0');
 })
+
+deleteBtn.addEventListener('click', () => {
+    if(num1 && op === null) {
+        num1 = num1.slice(0, num1.length - 1);
+        displayValue = num1;
+        display(displayValue);
+    }
+    else if(num2) {
+        num2 = num2.slice(0, num2.length - 1);
+        displayValue = num2;
+        display(displayValue);
+    }
+})
