@@ -58,6 +58,6 @@ operatorBtns.forEach(btn => {
             num2 = '';
             display(displayValue);
         }
-        else op = e.target.textContent;
+        else if(num1) op = e.target.textContent;
     })
 })
