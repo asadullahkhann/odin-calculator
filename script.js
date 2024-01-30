@@ -53,11 +53,20 @@ operatorBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         if(num1 && op && num2) {
             displayValue = calculator.operate(num1, op, num2);
-            num1 = displayValue;
+            num1 = displayValue.toString();
             op = e.target.textContent;
             num2 = '';
             display(displayValue);
         }
         else if(num1) op = e.target.textContent;
     })
+})
+
+equalsBtn.addEventListener('click', () => {
+    if(num1 && op && num2) {
+        displayValue = calculator.operate(num1, op, num2);
+            num1 = displayValue.toString();
+            num2 = '';
+            display(displayValue);
+    }
 })
