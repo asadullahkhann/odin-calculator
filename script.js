@@ -70,3 +70,10 @@ equalsBtn.addEventListener('click', () => {
             display(displayValue);
     }
 })
+
+allClearBtn.addEventListener('click', () => {
+    num1 = '';
+    op = null;
+    num2 = '';
+    display('0');
+})
