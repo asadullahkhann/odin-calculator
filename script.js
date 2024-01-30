@@ -30,7 +30,7 @@ const calculator = {
     'operate': (x, op, y) => {
         x = parseFloat(x);
         y = parseFloat(y);
-        return calculator[op](x, y);
+        return calculator[op](x, y).toString();
     }
 }
 
