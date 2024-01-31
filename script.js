@@ -18,7 +18,7 @@ let op = null;
 
 let num2 = '';
 
-let displayValue;
+let displayValue = '0';
 
 const calculator = {
     '+': (x, y) => x + y,
@@ -49,6 +49,18 @@ numberBtns.forEach(btn => {
     })
 })
 
+pointBtn.addEventListener('click', () => {
+    if(num1 && !num1.includes('.') && op === null) {
+        num1 += '.';
+        displayValue = num1;
+    }
+    else if(num2 && !num2.includes('.')) {
+        num2 += '.';
+        displayValue = num2;
+    }
+    display(displayValue);
+})
+
 operatorBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         if(num1 && op && num2) {
@@ -56,7 +68,8 @@ operatorBtns.forEach(btn => {
             num1 = displayValue.toString();
             op = e.target.textContent;
             num2 = '';
-            display(displayValue);
+            if(!Number.isInteger(+displayValue)) display(displayValue.toFixed(14));
+            else display(displayValue);
         }
         else if(num1) op = e.target.textContent;
     })
@@ -67,7 +80,8 @@ equalsBtn.addEventListener('click', () => {
         displayValue = calculator.operate(num1, op, num2);
             num1 = displayValue.toString();
             num2 = '';
-            display(displayValue);
+            if(!Number.isInteger(+displayValue)) display(displayValue.toFixed(14));
+            else display(displayValue);
     }
 })
 
@@ -75,7 +89,8 @@ allClearBtn.addEventListener('click', () => {
     num1 = '';
     op = null;
     num2 = '';
-    display('0');
+    displayValue = '0';
+    display(displayValue);
 })
 
 deleteBtn.addEventListener('click', () => {
