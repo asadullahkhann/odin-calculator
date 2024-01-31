@@ -68,7 +68,7 @@ operatorBtns.forEach(btn => {
             num1 = displayValue.toString();
             op = e.target.textContent;
             num2 = '';
-            if(!Number.isInteger(+displayValue)) display(displayValue.toFixed(14));
+            if(displayValue.toString().length > 16) display(displayValue.toFixed(14));
             else display(displayValue);
         }
         else if(num1) op = e.target.textContent;
@@ -80,7 +80,7 @@ equalsBtn.addEventListener('click', () => {
         displayValue = calculator.operate(num1, op, num2);
             num1 = displayValue.toString();
             num2 = '';
-            if(!Number.isInteger(+displayValue)) display(displayValue.toFixed(14));
+            if(displayValue.toString().length > 16) display(displayValue.toFixed(14));
             else display(displayValue);
     }
 })
