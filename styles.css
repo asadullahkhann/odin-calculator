@@ -21,7 +21,6 @@ body {
     height: 66px;
     color: white;
     font-size: 34px;
-    font-family: Arial, Helvetica, sans-serif;
     background-color: black;
     display: flex;
     justify-content: flex-end;
@@ -36,7 +35,10 @@ body {
     width: 75px;
     height: 66px;
     border: none;
-    font-size: 24px;
+    font-size: 32px;
+}
+
+.screen, .btn-container button {
     font-family: Arial, Helvetica, sans-serif;
 }
 
