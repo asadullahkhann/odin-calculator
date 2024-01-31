@@ -18,6 +18,7 @@ body {
 }
 
 .screen {
+    overflow: hidden;
     height: 66px;
     color: white;
     font-size: 34px;
