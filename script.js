@@ -12,13 +12,13 @@ const pointBtn = document.querySelector('.point');
 
 const equalsBtn = document.querySelector('.equals');
 
-let num1 = '';
+let num1 = '0';
 
 let op = null;
 
 let num2 = '';
 
-let displayValue = '0';
+let displayValue;
 
 const calculator = {
     '+': (x, y) => x + y,
@@ -40,11 +40,16 @@ function display(value) {
 
 numberBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-        let number = e.target.textContent;
-        op === null ? num1 += number : 
-        num2 += number;
-        num2 ? displayValue = num2 :
-        displayValue = num1;
+        let enteredNumber = e.target.textContent;
+        if(op === null) {
+            if(num1 === '0') num1 = enteredNumber;
+            else num1 += enteredNumber;
+        }
+        else {
+            if(num2 === '0') num2 = enteredNumber;
+            else num2 += enteredNumber
+        }
+        num2 ? displayValue = num2 : displayValue = num1;
         display(displayValue); 
     })
 })
@@ -86,7 +91,7 @@ equalsBtn.addEventListener('click', () => {
 })
 
 allClearBtn.addEventListener('click', () => {
-    num1 = '';
+    num1 = '0';
     op = null;
     num2 = '';
     displayValue = '0';
