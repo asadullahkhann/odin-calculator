@@ -24,9 +24,9 @@ const calculator = {
     '+': (x, y) => x + y,
     '-': (x, y) => x - y,
     '*': (x, y) => x * y,
-    '/': (x, y) => x / y,
-    '**': (x, y) => x ** y,
-    '%': (x, y) => x % y,
+    '/': (x, y) => isFinite(x / y) ? x / y : 'Lol',
+    '**': (x, y) => isFinite(x ** y) ? x ** y : 'Too big',
+    '%': (x, y) => isFinite(x % y) ? x % y : 'Lol' ,
     'operate': (x, op, y) => {
         x = parseFloat(x);
         y = parseFloat(y);
@@ -38,16 +38,20 @@ function display(value) {
     screen.textContent = value;
 }
 
+function resetCalc() {
+    num1 = '0';
+    op = null;
+    num2 = '';
+}
+
 numberBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         let enteredNumber = e.target.textContent;
         if(op === null) {
-            if(num1 === '0') num1 = enteredNumber;
-            else num1 += enteredNumber;
+            (num1 === '0') ? num1 = enteredNumber : num1 += enteredNumber;
         }
         else {
-            if(num2 === '0') num2 = enteredNumber;
-            else num2 += enteredNumber
+            (num2 === '0') ? num2 = enteredNumber : num2 += enteredNumber
         }
         num2 ? displayValue = num2 : displayValue = num1;
         display(displayValue); 
@@ -70,11 +74,22 @@ operatorBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         if(num1 && op && num2) {
             displayValue = calculator.operate(num1, op, num2);
-            num1 = displayValue.toString();
-            op = e.target.textContent;
-            num2 = '';
-            if(displayValue.toString().length > 16) display(displayValue.toFixed(14));
-            else display(displayValue);
+            switch(displayValue) {
+                case 'Too big':
+                    resetCalc();
+                    alert('Too big');
+                    display(num1);
+                    break;
+                case 'Lol':
+                    display(displayValue);
+                    break;
+                default:
+                    num1 = displayValue.toString();
+                    op = e.target.textContent;
+                    num2 = '';
+                    (displayValue.toString().length > 16) ? display(displayValue.toFixed(14)) :
+                    display(displayValue);
+            }
         }
         else if(num1) op = e.target.textContent;
     })
@@ -83,30 +98,37 @@ operatorBtns.forEach(btn => {
 equalsBtn.addEventListener('click', () => {
     if(num1 && op && num2) {
         displayValue = calculator.operate(num1, op, num2);
-            num1 = displayValue.toString();
-            num2 = '';
-            if(displayValue.toString().length > 16) display(displayValue.toFixed(14));
-            else display(displayValue);
+        switch(displayValue) {
+            case 'Too big':
+                resetCalc();
+                alert('Too big');
+                display(num1);
+                break;
+            case 'Lol':
+                display(displayValue);
+                break;
+            default:
+                num1 = displayValue.toString();
+                num2 = '';
+                (displayValue.toString().length > 16) ? display(displayValue.toFixed(14)) :
+                display(displayValue);
+        }
     }
 })
 
 allClearBtn.addEventListener('click', () => {
-    num1 = '0';
-    op = null;
-    num2 = '';
-    displayValue = '0';
-    display(displayValue);
+    resetCalc();
+    display(num1);
 })
 
 deleteBtn.addEventListener('click', () => {
     if(num1 && op === null) {
         num1 = num1.slice(0, num1.length - 1);
         displayValue = num1;
-        display(displayValue);
     }
     else if(num2) {
         num2 = num2.slice(0, num2.length - 1);
         displayValue = num2;
-        display(displayValue);
     }
+    display(displayValue);
 })
