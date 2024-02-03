@@ -1,3 +1,5 @@
+window.onload = alert('Operators are updated only if the last expression was evaluated')
+
 const screen = document.querySelector('.screen');
 
 const allClearBtn = document.querySelector('.ac');
@@ -53,9 +55,11 @@ function handleCases(val) {
         case 'Too big':
             resetCalc();
             alert('Too big');
+            expressionEvaluated = false;
             break;
         case 'Lol':
             display(val);
+            expressionEvaluated = false;
             break;
         default:
             num1 = val.toString();
