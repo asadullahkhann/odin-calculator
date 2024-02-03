@@ -1,5 +1,3 @@
-window.onload = alert('Operators are updated only if the last expression was evaluated')
-
 const screen = document.querySelector('.screen');
 
 const allClearBtn = document.querySelector('.ac');
@@ -128,3 +126,5 @@ deleteBtn.addEventListener('click', () => {
     }
     display(displayValue);
 })
+
+alert('Operators are updated only if the last expression was evaluated');
