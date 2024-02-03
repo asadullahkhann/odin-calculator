@@ -18,7 +18,7 @@ let op = null;
 
 let num2 = '';
 
-let displayValue;
+let displayValue = '0';
 
 let expressionEvaluated = false;
 
@@ -44,8 +44,9 @@ function resetCalc() {
     num1 = '0';
     op = null;
     num2 = '';
+    displayValue = '0';
     expressionEvaluated = false;
-    display(num1);
+    display(displayValue);
 }
 
 function handleCases(val) {
@@ -116,13 +117,17 @@ equalsBtn.addEventListener('click', () => {
 allClearBtn.addEventListener('click', resetCalc)
 
 deleteBtn.addEventListener('click', () => {
-    if(num1 && op === null) {
+    if(+num1 && op === null) {
         num1 = num1.slice(0, num1.length - 1);
         displayValue = num1;
     }
     else if(num2) {
         num2 = num2.slice(0, num2.length - 1);
         displayValue = num2;
+    }
+    if(num1 === '') {
+        num1 = '0';
+        displayValue = num1;
     }
     display(displayValue);
 })
