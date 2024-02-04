@@ -1,3 +1,5 @@
+window.onload = alert('Operators are updated only if the last expression was evaluated');
+
 const screen = document.querySelector('.screen');
 
 const allClearBtn = document.querySelector('.ac');
@@ -18,7 +20,7 @@ let op = null;
 
 let num2 = '';
 
-let displayValue = '0';
+let displayValue;
 
 let expressionEvaluated = false;
 
@@ -119,17 +121,13 @@ allClearBtn.addEventListener('click', resetCalc)
 deleteBtn.addEventListener('click', () => {
     if(+num1 && op === null) {
         num1 = num1.slice(0, num1.length - 1);
+        if(num1 === '') num1 = '0';
         displayValue = num1;
+        display(displayValue);
     }
     else if(num2) {
         num2 = num2.slice(0, num2.length - 1);
         displayValue = num2;
+        display(displayValue);
     }
-    if(num1 === '') {
-        num1 = '0';
-        displayValue = num1;
-    }
-    display(displayValue);
 })
-
-alert('Operators are updated only if the last expression was evaluated');
