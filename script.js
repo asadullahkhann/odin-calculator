@@ -74,12 +74,11 @@ function handleCases(val) {
 numberBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         let enteredNumber = e.target.textContent;
-        switch(op) {
-            case null:
-              (num1 === '0')  ? num1 = enteredNumber : num1 += enteredNumber;
-              break;
-            default:
-                (num2 === '0') ? num2 = enteredNumber : num2 += enteredNumber;
+        if(num1.length < 15 && op === null) {
+            num1 === '0' ? num1 = enteredNumber : num1 += enteredNumber;
+        }
+        else if(num2.length < 15 && op) {
+            num2 === '0' ? num2 = enteredNumber : num2 += enteredNumber;
         }
         num2 ? displayValue = num2 : displayValue = num1;
         display(displayValue); 
