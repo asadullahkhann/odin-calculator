@@ -128,5 +128,3 @@ deleteBtn.addEventListener('click', () => {
         display(displayValue);
     }
 })
-
-alert('Operators are updated only if the last expression was evaluated');
