@@ -38,13 +38,12 @@ body {
     border: none;
 }
 
-.screen, .number {
+.screen, button {
     font-family: 'Ubuntu';
 }
 
 .ac, .del {
     color:  #d9534f;
-    font-family: 'Courier New';
 }
 
 .btn-container .operator {
