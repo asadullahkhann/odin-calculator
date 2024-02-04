@@ -65,7 +65,7 @@ function handleCases(val) {
         default:
             num1 = val.toString();
             num2 = '';
-            (val.toString().length > 16) ? display(val.toFixed(14)) :
+            (val.toString().length > 15) ? display(val.toFixed(13)) :
             display(val);
             expressionEvaluated = true;
     }
