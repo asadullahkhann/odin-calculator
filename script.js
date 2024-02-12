@@ -116,7 +116,7 @@ equalsBtn.addEventListener('click', () => {
 allClearBtn.addEventListener('click', resetCalc)
 
 deleteBtn.addEventListener('click', () => {
-    if(+num1 && op === null) {
+    if(num1 && op === null) {
         num1 = num1.slice(0, num1.length - 1);
         if(num1 === '') num1 = '0';
         displayValue = num1;
