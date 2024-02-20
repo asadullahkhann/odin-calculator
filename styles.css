@@ -39,7 +39,7 @@ body {
 }
 
 .screen, button {
-    font-family: 'Ubuntu';
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .ac, .del {
@@ -52,10 +52,11 @@ body {
 
 .operator, .equals {
     font-family: 'Merriweather';
+    font-weight: bold;
 }
 
 .equals {
-    background-color: orange
+    background-color: orange;
 }
 
 .equals:active {
