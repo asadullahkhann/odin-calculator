@@ -67,7 +67,7 @@ function handleCases(val) {
             }
             num1 = val.toString();
             num2 = '';
-            (val.toString().length > 13) ? display(val.toFixed(11)) :
+            (val.toString().length > 13) ? display(val.toFixed(10)) :
             display(val);
             expressionEvaluated = true;
     }
