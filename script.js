@@ -50,26 +50,27 @@ function resetCalc() {
 }
 
 function handleCases(val) {
-    switch(val) {
-        case 'Too big':
-            resetCalc();
-            alert('Too big');
-            break;
-        case 'Lol':
-            display(val);
-            expressionEvaluated = false;
-            break;
-        default:
-            if(Number.isInteger(val) && val.toString().length > 13) {
-                alert(val);
-                resetCalc();
-                return;
-            }
-            num1 = val.toString();
-            num2 = '';
-            (val.toString().length > 13) ? display(val.toFixed(10)) :
-            display(val);
-            expressionEvaluated = true;
+    if(val === 'Too big') {
+        alert('Too big');
+        resetCalc();
+    }
+    else if(val === 'Lol') {
+        display('Lol');
+        expressionEvaluated = false;
+    }
+    else if(Number.isInteger(val) && val.toString().length > 13) {
+        alert(val);
+        resetCalc();
+    }
+    else if(!Number.isInteger(val) && val.toFixed(3).length > 13) {
+        alert(val);
+        resetCalc();
+    }
+    else {
+        num1 = val.toString();
+        num2 = '';
+        expressionEvaluated = true;
+        (val.toString().length > 13) ? display(val.toFixed(3)) : display(val);
     }
 }
 
