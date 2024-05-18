@@ -10,7 +10,7 @@ body {
   align-items: center;
   padding: 0;
   margin: 0;
-  background: linear-gradient(#bdc3c7, #2c3e50);
+  /* background: linear-gradient(#bdc3c7, #2c3e50); */
 }
 
 .container {
@@ -28,6 +28,7 @@ body {
   width: 100%;
   height: 65px;
   background-color: #9ccc63;
+  color: #316868;
   border-radius: 10px;
   display: flex;
   justify-content: flex-end;
@@ -50,16 +51,16 @@ button {
 }
 
 .number, .point{
-  background-color: #d3d3d3;
+  background-color: #e5e3e6;
 }
 
 .operator, .equals {
-  background-color: #808080;
+  background-color: #636164;
 
 }
 
 .ac, .del {
-  background-color: #d2042d;
+  background-color: #fd5552;
 }
 
 button:hover {
