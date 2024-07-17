@@ -1,16 +1,19 @@
+:root {
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
   margin: 0;
-  /* background: linear-gradient(#bdc3c7, #2c3e50); */
 }
 
 .container {
