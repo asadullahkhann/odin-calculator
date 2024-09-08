@@ -1,5 +1,10 @@
 :root {
   height: 100%;
+  --clr-1: #2E073F;
+  --clr-2: #7A1CAC;
+  --clr-3: #AD49E1;
+  --clr-4: #EBD3F8;
+  /* --clr-5: #131515; */
 }
 
 * {
@@ -20,7 +25,7 @@ body {
   width: 350px;
   height: 500px;
   padding: 25px;
-  background-color: #000;
+  background-color: var(--clr-3);
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -30,13 +35,14 @@ body {
 .screen {
   width: 100%;
   height: 65px;
-  background-color: #9ccc63;
-  color: #316868;
+  background-color: var(--clr-2);
+  color: var(--clr-4);
   border-radius: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   font-size: 2.3rem;
+  padding-right: 8px;
 }
 
 .btn-container {
@@ -51,19 +57,22 @@ button {
   border-radius: 10px;
   font-size: 2rem;
   border: none;
+  color: var(--clr-4);
 }
 
 .number, .point{
-  background-color: #e5e3e6;
+  background-color: var(--clr-1);
 }
 
 .operator, .equals {
-  background-color: #636164;
+  background-color: var(--clr-4);
+  color: var(--clr-1);
 
 }
 
 .ac, .del {
-  background-color: #fd5552;
+  background-color: var(--clr-4);
+  color: var(--clr-1);
 }
 
 button:hover {
