@@ -4,12 +4,30 @@
   --clr-2: #7A1CAC;
   --clr-3: #AD49E1;
   --clr-4: #EBD3F8;
-  /* --clr-5: #131515; */
+}
+
+@font-face {
+  font-family: 'nato-sans-math';
+  src: url('./fonts/NotoSansMath-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'ds-digit';
+  src: url('./fonts/DS-DIGIT.TTF');
+}
+
+@font-face {
+  font-family: 'ktf-roadbrush';
+  src: url('./fonts/KTF-Roadbrush.ttf');
+}
+
+@font-face {
+  font-family: 'trick-tag';
+  src: url('./fonts/TrickTag.ttf');
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
@@ -41,7 +59,8 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
+  font-family: 'ds-digit';
   padding-right: 8px;
 }
 
@@ -55,24 +74,28 @@ body {
 button {
   width: 65px;
   border-radius: 10px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   border: none;
   color: var(--clr-4);
 }
 
 .number, .point{
   background-color: var(--clr-1);
+  font-family: 'trick-tag';
 }
 
 .operator, .equals {
   background-color: var(--clr-4);
   color: var(--clr-1);
+  font-family: 'nato-sans-math';
+  font-weight: bold;
 
 }
 
 .ac, .del {
   background-color: var(--clr-4);
   color: var(--clr-1);
+  font-family: 'ktf-roadbrush';
 }
 
 button:hover {
