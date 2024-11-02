@@ -75,6 +75,7 @@ button {
   color: var(--clr-1);
   font-family: 'inter';
   background-color: var(--clr-3);
+  box-shadow: 2px 2px 8px var(--clr-4);
 }
 
 .operator {
@@ -87,9 +88,5 @@ button {
 }
 
 button:hover {
-  background-color: #2e073f;
-}
-
-button:active {
-  opacity: 1;
+  box-shadow: none;
 }
