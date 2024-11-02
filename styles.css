@@ -74,23 +74,14 @@ button {
   border: none;
   color: var(--clr-1);
   font-family: 'inter';
-}
-
-.number, .point{
   background-color: var(--clr-3);
-}
-
-.equals {
-  background-color: var(--clr-4);
-  color: var(--clr-1);
-
 }
 
 .operator {
   color: var(--clr-4);
 }
 
-.ac, .del {
+.ac, .del, .equals {
   background-color: var(--clr-4);
   color: var(--clr-1);
 }
