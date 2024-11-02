@@ -1,9 +1,9 @@
 :root {
   height: 100%;
-  --clr-1: #2E073F;
-  --clr-2: #7A1CAC;
-  --clr-3: #AD49E1;
-  --clr-4: #EBD3F8;
+  --clr-1: #1c1c1c;
+  --clr-2: #505050;
+  --clr-3: #d4d4d2;
+  --clr-4: #fe9400;
 }
 
 @font-face {
@@ -43,7 +43,7 @@ body {
   width: 350px;
   height: 500px;
   padding: 25px;
-  background-color: var(--clr-2);
+  background-color: var(--clr-1);
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -53,8 +53,8 @@ body {
 .screen {
   width: 100%;
   height: 65px;
-  background-color: var(--clr-3);
-  color: var(--clr-4);
+  background-color: var(--clr-2);
+  color: var(--clr-3);
   border-radius: 10px;
   display: flex;
   justify-content: flex-end;
@@ -76,20 +76,24 @@ button {
   border-radius: 10px;
   font-size: 2.2rem;
   border: none;
-  color: var(--clr-4);
+  color: var(--clr-1);
 }
 
 .number, .point{
-  background-color: var(--clr-1);
+  background-color: var(--clr-3);
   font-family: 'trick-tag';
 }
 
-.operator, .equals {
+.equals {
   background-color: var(--clr-4);
   color: var(--clr-1);
   font-family: 'nato-sans-math';
   font-weight: bold;
 
+}
+
+.operator {
+  color: var(--clr-4);
 }
 
 .ac, .del {
@@ -99,7 +103,7 @@ button {
 }
 
 button:hover {
-  opacity: .5;
+  background-color: #2e073f;
 }
 
 button:active {
