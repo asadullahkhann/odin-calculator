@@ -7,8 +7,8 @@
 }
 
 @font-face {
-  font-family: 'nato-sans-math';
-  src: url('./fonts/NotoSansMath-Regular.ttf');
+  font-family: 'inter';
+  src: url('./fonts/Inter-Regular.otf');
 }
 
 @font-face {
@@ -21,10 +21,6 @@
   src: url('./fonts/KTF-Roadbrush.ttf');
 }
 
-@font-face {
-  font-family: 'trick-tag';
-  src: url('./fonts/TrickTag.ttf');
-}
 
 * {
   box-sizing: border-box;
@@ -77,17 +73,16 @@ button {
   font-size: 2.2rem;
   border: none;
   color: var(--clr-1);
+  font-family: 'inter';
 }
 
 .number, .point{
   background-color: var(--clr-3);
-  font-family: 'trick-tag';
 }
 
 .equals {
   background-color: var(--clr-4);
   color: var(--clr-1);
-  font-family: 'nato-sans-math';
   font-weight: bold;
 
 }
@@ -99,7 +94,6 @@ button {
 .ac, .del {
   background-color: var(--clr-4);
   color: var(--clr-1);
-  font-family: 'ktf-roadbrush';
 }
 
 button:hover {
