@@ -75,7 +75,7 @@ button {
   color: var(--clr-1);
   font-family: 'inter';
   background-color: var(--clr-3);
-  box-shadow: 2px 2px 8px var(--clr-4);
+  box-shadow: 0 2px 6px #e58500;
 }
 
 .operator {
