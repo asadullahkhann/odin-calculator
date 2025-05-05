@@ -50,7 +50,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-family: 'ds-digit';
   padding-right: 8px;
 }
@@ -65,7 +65,7 @@ body {
 button {
   width: 65px;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   border: none;
   color: #212121;
   font-family: 'inter';
