@@ -87,3 +87,19 @@ button:not(.number) {
 .ac, .del {
   background-color: #e53935;
 }
+
+.ac:hover, .del:hover {
+  background-color: #c62828;
+}
+
+.operator:hover {
+  background-color: #ef6c00;
+}
+
+.equals:hover {
+  background-color: #f4511e;
+}
+
+.number:hover {
+  background-color: #e0e0e0;
+}
